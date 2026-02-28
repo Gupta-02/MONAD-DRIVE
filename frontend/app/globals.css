@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design Tokens - Light Theme (Default) */
+:root {
+  /* Core Colors */
+  --color-bg: 255 255 255; /* #ffffff */
+  --color-surface: 249 250 251; /* #f9fafb */
+  --color-primary: 34 197 94; /* #22c55e - green */
+  --color-secondary: 107 114 128; /* #6b7280 */
+  --color-accent: 6 182 212; /* #06b6d4 - cyan */
+  --color-text: 15 23 42; /* #0f172a */
+  --color-text-muted: 107 114 128; /* #6b7280 */
+  --color-border: 229 231 235; /* #e5e7eb */
+  --color-danger: 239 68 68; /* #ef4444 */
+  --color-success: 34 197 94; /* #22c55e */
+
+  /* Semantic Colors */
+  --color-bg-primary: var(--color-bg);
+  --color-bg-secondary: var(--color-surface);
+  --color-bg-tertiary: 243 244 246; /* #f3f4f6 */
+  --color-bg-accent: var(--color-accent);
+
+  --color-text-primary: var(--color-text);
+  --color-text-secondary: var(--color-text-muted);
+  --color-text-accent: var(--color-primary);
+  --color-text-inverse: 255 255 255; /* #ffffff */
+
+  --color-border-primary: var(--color-border);
+  --color-border-secondary: 209 213 219; /* #d1d5db */
+
+  /* Interactive States */
+  --color-hover: 243 244 246; /* #f3f4f6 */
+  --color-active: 229 231 235; /* #e5e7eb */
+  --color-focus: 59 130 246; /* #3b82f6 */
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-bg: 15 15 15; /* #0f0f0f */
+  --color-surface: 23 23 23; /* #171717 */
+  --color-primary: 74 222 128; /* #4ade80 - light green */
+  --color-secondary: 156 163 175; /* #9ca3af */
+  --color-accent: 6 182 212; /* #06b6d4 - cyan */
+  --color-text: 248 250 252; /* #f8fafc */
+  --color-text-muted: 156 163 175; /* #9ca3af */
+  --color-border: 55 65 81; /* #374151 */
+  --color-danger: 248 113 113; /* #f87171 */
+  --color-success: 74 222 128; /* #4ade80 */
+
+  --color-bg-primary: var(--color-bg);
+  --color-bg-secondary: var(--color-surface);
+  --color-bg-tertiary: 31 41 55; /* #1f2937 */
+  --color-bg-accent: var(--color-accent);
+
+  --color-text-primary: var(--color-text);
+  --color-text-secondary: var(--color-text-muted);
+  --color-text-accent: var(--color-primary);
+  --color-text-inverse: 15 23 42; /* #0f172a */
+
+  --color-border-primary: var(--color-border);
+  --color-border-secondary: 75 85 99; /* #4b5563 */
+
+  --color-hover: 31 41 55; /* #1f2937 */
+  --color-active: 55 65 81; /* #374151 */
+  --color-focus: 96 165 250; /* #60a5fa */
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-border-secondary));
+}
+
+/* Aurora Text Animation */
+@keyframes aurora {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 3s ease-in-out infinite;
+}
