@@ -1,11 +1,113 @@
-# Monad Blitz Hyderbad Submission Process
+# 🚗 MonaDrive - Vehicle Digital Twin on Monad
 
-1. Visit the `monad-blitz-hyderabad` repo (link [here](https://github.com/monad-developers/monad-blitz-hyderabad)) and fork it.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Solidity](https://img.shields.io/badge/Solidity-0.8.19-blue.svg)](https://soliditylang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+[![Hardhat](https://img.shields.io/badge/Hardhat-2.19.4-yellow.svg)](https://hardhat.org/)
 
-<img width="1511" alt="Screenshot 2025-07-07 at 10 12 23 AM" src="https://github.com/user-attachments/assets/e8196bd5-90f7-4906-9994-2580f1b4b3ba" />
+> **MonaDrive** is a premium digital twin marketplace for vehicles, built on the Monad Testnet. It bridges the gap between physical vehicles and digital ownership by representing each car as a dynamic NFT. This NFT tracks the vehicle's entire lifecycle: from the showroom floor, through the delivery process, to its service history.
 
-2. Give it your project name, a one-liner description, make sure you are forking `main` branch and click `Create Fork`.
+## ✨ Key Features
 
-<img width="1511" alt="Screenshot 2025-07-07 at 10 11 40 AM" src="https://github.com/user-attachments/assets/0c35b1d6-e8d1-4f8f-a1af-3bcaa476eec6" />
+### 🛒 Digital Marketplace
+- **Browse & Buy**: Explore a curated selection of premium vehicles (Tesla, Rivian, BMW).
+- **Instant Purchase**: Buy vehicles directly on-chain using native MON tokens.
+- **Infinite Demo**: Experience the buying flow repeatedly with our "Infinite Fleet" of Rivian R1Ts.
 
-3. In your fork you can make all the changes you want, add code of your project, create branches, add information to `README.md`, you can change anything and everything.
+### 🚚 Live Delivery Tracking
+- **Real-Time Updates**: Watch your vehicle move from "Factory" to "Regional Hub" to "Delivery Center".
+- **Visual Progress**: A dynamic, animated delivery tracker shows exactly where your vehicle is.
+- **On-Chain Status**: Delivery stages (Not Started, In Transit, Delivered) are stored on the blockchain.
+
+### 🔧 Service History & Digital Logbook
+- **Immutable Records**: All service events (maintenance, repairs, upgrades) are recorded on-chain.
+- **Odometer Tracking**: Service logs include odometer readings for verifiable mileage history.
+- **Owner Dashboard**: Manage your garage, view service history, and track delivery status in one place.
+
+### 🏎️ "My Garage" Experience
+- **Digital Ownership**: View all your owned vehicles in a sleek, Tesla-inspired dashboard.
+- **Actions**: Rent out your vehicle, sell it, or log a new service event.
+- **Live Activity Feed**: A real-time feed of all marketplace actions (Purchases, Rentals, Services).
+
+## 🛠️ Tech Stack
+
+| Category       | Technologies |
+|----------------|--------------|
+| **Blockchain** | Solidity, Hardhat, Monad Testnet (Chain ID: 10143) |
+| **Frontend**   | Next.js 14 (App Router), TypeScript, Tailwind CSS |
+| **Web3 Integration** | Wagmi v2, Viem, TanStack Query |
+| **Styling**    | Custom CSS animations, Glassmorphism, Premium Dark Mode |
+
+## 🚀 Setup & Installation
+
+### Prerequisites
+- Node.js v18+
+- A Monad Testnet wallet with funds (MON)
+- Git
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Gupta-02/MONAD-DRIVE.git
+cd monad-vehicle-digital-twin
+```
+
+### 2. Install Dependencies
+**Root (Hardhat & Scripts):**
+```bash
+npm install
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+```
+
+### 3. Environment Configuration
+Create a `.env` file in the root directory:
+```env
+PRIVATE_KEY=your_wallet_private_key
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xD61aa636070484D777E8Ef948F8ee4272c5fa79C
+NEXT_PUBLIC_RPC_URL=https://testnet-rpc.monad.xyz
+NEXT_PUBLIC_CHAIN_ID=10143
+```
+
+### 4. Run the Application
+**Start the Frontend:**
+```bash
+cd frontend
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🎯 Demo Flow
+1. **Connect Wallet**: Click "Connect Wallet" in the top right.
+2. **Buy a Car**: Go to the Marketplace, select the **Rivian R1T**, and click "Buy". Confirm the transaction.
+3. **Track Delivery**: Watch the delivery animation in the success screen or check "Orders".
+4. **Check Garage**: Go to "My Garage" to see your new vehicle.
+5. **Add Service**: Click "Add Service Log", enter details (e.g., "Tire Rotation", "5,000 mi"), and confirm.
+6. **Verify**: See the new service badge appear on your vehicle card.
+
+## 📁 Project Structure
+```
+monad-vehicle-digital-twin/
+├── contracts/                 # Solidity smart contracts
+├── frontend/                  # Next.js application
+│   ├── app/                   # App Router pages
+│   ├── components/            # Reusable UI components
+│   └── lib/                   # Utilities and hooks
+├── scripts/                   # Deployment and seeding scripts
+├── artifacts/                 # Compiled contract artifacts
+├── typechain-types/           # TypeScript types for contracts
+└── cache/                     # Hardhat cache
+```
+
+## 🤝 Contributing
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Built with ❤️ on Monad**
